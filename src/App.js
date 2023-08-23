@@ -7,8 +7,8 @@ function App() {
       <div className='headerLeft'>
         <svg/>
         <div className='headerInfo'>
-          <h3>React Cookies</h3>
-          <p> Магазин вкусняшек</p>
+          <h3>REACT SNEAKERS</h3>
+          <p> Магазин лучших кроссовок</p>
         </div>
       </div>
 
@@ -22,6 +22,10 @@ function App() {
         </li>
       </ul>
     </header>
+    <div className='content'>
+      <h1>Все кроссовки</h1>
+      ....
+    </div>
   </div>
 }
 
