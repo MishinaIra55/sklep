@@ -5,7 +5,7 @@ function App() {
   return<div className='wrapper'>
     <header>
       <div className='headerLeft'>
-        <img src='/images/logo.svg'/>
+        <img src='/images/logo.svg' alt='#' width='40' height='40'/>
         <div className='headerInfo'>
           <h3>REACT SNEAKERS</h3>
           <p> Магазин лучших кроссовок</p>
@@ -13,12 +13,12 @@ function App() {
       </div>
 
       <ul className='headerRight'>
-        <li>
-          <svg/>
+        <li className='headerList'>
+          <img src='/images/cart.svg'  alt='#' width='18' height='18'/>
           <span> 2000грн</span>
         </li>
         <li>
-          <svg/>
+          <img src='/images/user.svg'  alt='#' width='18' height='18'/>
         </li>
       </ul>
     </header>
