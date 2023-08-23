@@ -5,7 +5,7 @@ function App() {
   return<div className='wrapper'>
     <header>
       <div className='headerLeft'>
-        <svg/>
+        <img src='/images/logo.svg'/>
         <div className='headerInfo'>
           <h3>REACT SNEAKERS</h3>
           <p> Магазин лучших кроссовок</p>
