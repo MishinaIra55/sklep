@@ -8,7 +8,7 @@ function App() {
         <img src='/images/logo.svg' alt='#' width='40' height='40'/>
         <div className='headerInfo'>
           <h3>REACT SNEAKERS</h3>
-          <p> Магазин лучших кроссовок</p>
+          <h1> Магазин лучших кроссовок</h1>
         </div>
       </div>
 
