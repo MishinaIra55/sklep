@@ -8,7 +8,7 @@ function App() {
         <img src='/images/logo.svg' alt='#' width='40' height='40'/>
         <div className='headerInfo'>
           <h3>REACT SNEAKERS</h3>
-          <h1> Магазин лучших кроссовок</h1>
+          <p> Магазин найкращих кросівок</p>
         </div>
       </div>
 
@@ -23,8 +23,21 @@ function App() {
       </ul>
     </header>
     <div className='content'>
-      <h1>Все кроссовки</h1>
-      ....
+      <h1>Всі кроссівки</h1>
+
+     <div className='card'>
+       <img src='/images/sneakers/1.jpg' width='133' height='112'alt=''/>
+       <p>Чоловічі кросівки Nike Blazer Mid Suede</p>
+       <div>
+         <div>
+           <span>Ціна:</span>
+           <b>2000грн</b>
+         </div>
+         <button>
+           <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+         </button>
+       </div>
+    </div>
     </div>
   </div>
 }
