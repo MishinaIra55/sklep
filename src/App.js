@@ -23,22 +23,65 @@ function App() {
       </ul>
     </header>
     <div className='content'>
-      <h1>Всі кроссівки</h1>
+      <h1 className='contentTitle'>Всі кроссівки</h1>
 
-     <div className='card'>
-       <img src='/images/sneakers/1.jpg' width='133' height='112'alt=''/>
-       <p>Чоловічі кросівки Nike Blazer Mid Suede</p>
-       <div>
-         <div>
-           <span>Ціна:</span>
-           <b>2000грн</b>
+     <div className='sneakers'>
+       <div className='card'>
+         <img src='/images/sneakers/1.jpg' width='133' height='112'alt=''/>
+         <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
+         <div className='cardBlock'>
+           <div className='cardText'>
+             <span>Ціна:</span>
+             <b>2000грн</b>
+           </div>
+           <button className='button'>
+             <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+           </button>
          </div>
-         <button>
-           <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
-         </button>
        </div>
+       <div className='card'>
+         <img src='/images/sneakers/2.jpg' width='133' height='112'alt=''/>
+         <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
+         <div className='cardBlock'>
+           <div className='cardText'>
+             <span>Ціна:</span>
+             <b>2000грн</b>
+           </div>
+           <button className='button'>
+             <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+           </button>
+         </div>
+       </div>
+       <div className='card'>
+         <img src='/images/sneakers/3.jpg' width='133' height='112'alt=''/>
+         <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
+         <div className='cardBlock'>
+           <div className='cardText'>
+             <span>Ціна:</span>
+             <b>2000грн</b>
+           </div>
+           <button className='button'>
+             <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+           </button>
+         </div>
+       </div>
+       <div className='card'>
+         <img src='/images/sneakers/4.jpg' width='133' height='112'alt=''/>
+         <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
+         <div className='cardBlock'>
+           <div className='cardText'>
+             <span>Ціна:</span>
+             <b>2000грн</b>
+           </div>
+           <button className='button'>
+             <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+           </button>
+         </div>
+       </div>
+     </div>
+
     </div>
-    </div>
+
   </div>
 }
 

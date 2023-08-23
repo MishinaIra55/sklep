@@ -79,3 +79,63 @@ img  {
     margin: 0;
   }
 }
+
+.contentTitle {
+  margin-bottom: 40px;
+}
+
+//стилизация карточки
+.sneakers {
+  display: flex;
+}
+.card {
+  border: 1px solid #f8f8f8;
+  padding: 30px;
+  width: 220px;
+  border-radius: 40px;
+  margin-right: 40px;
+  margin-top: 40px;
+
+  span {
+    font-size: 13px;
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+  b {
+    font-size: 12px;
+  }
+
+  h5 {
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+}
+
+.cardBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+}
+
+.button {
+  background: white;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.button img {
+  display: block;
+  margin: auto;
+}
