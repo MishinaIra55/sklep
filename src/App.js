@@ -33,6 +33,9 @@ function App() {
 
      <div className='sneakers'>
        <div className='card'>
+         <div className='favorite'>
+           <img src='/images/unliked.png'  width='30'  height='30' alt='unliked'/>
+         </div>
          <img src='/images/sneakers/1.jpg' width='133'  height='112' alt='sneakers'/>
          <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
          <div className='cardBlock'>
