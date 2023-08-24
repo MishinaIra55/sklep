@@ -196,4 +196,22 @@ img  {
   right: 0;
   background: white;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+
+  padding: 30px;
+
+  h2 {
+    margin: 0;
+
+  }
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+}
+.cartText {
+  margin-bottom: 5px;
+}
+.cartInfo {
+  margin-right: 20px;
 }
