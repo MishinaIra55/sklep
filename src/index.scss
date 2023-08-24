@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
@@ -12,6 +11,7 @@ p {
   margin: 0;
 }
 * {
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   outline: none;
 }
@@ -29,6 +29,8 @@ ul {
 li {
   list-style-type: none;
 }
+
+
 
 //стили для враппера контейнера
 .wrapper {
@@ -85,7 +87,7 @@ img  {
 }
 
 .contentTitle {
-  margin-bottom: 40px;
+  //margin-bottom: 40px;
 }
 
 //стилизация карточки
@@ -142,4 +144,24 @@ img  {
 .button img {
   display: block;
   margin: auto;
+}
+
+//стили для поиска search
+.contentBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.search {
+  display: flex;
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  padding: 0 15px;
+
+  input {
+    border: 0;
+    padding: 13px;
+    font-size: 16px;
+  }
 }

@@ -14,26 +14,26 @@ function App() {
 
       <ul className='headerRight'>
         <li className='headerList'>
-          <img src='/images/cart.svg'  alt='#' width='18' height='18'/>
+          <img src='/images/cart.svg'  alt='cart' width='18' height='18'/>
           <span> 2000грн</span>
         </li>
         <li>
-          <img src='/images/user.svg'  alt='#' width='18' height='18'/>
+          <img src='/images/user.svg'  alt='user' width='18' height='18'/>
         </li>
       </ul>
     </header>
     <div className='content'>
-     <div>
+     <div className='contentBlock'>
        <h1 className='contentTitle'>Всі кроссівки</h1>
        <div className='search'>
          <img src='/images/search.svg' alt='search'/>
-         <input placeholder='search'/>
+         <input placeholder='Search...'/>
        </div>
      </div>
 
      <div className='sneakers'>
        <div className='card'>
-         <img src='/images/sneakers/1.jpg' width='133' height='112'alt=''/>
+         <img src='/images/sneakers/1.jpg' width='133'  height='112' alt='sneakers'/>
          <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
          <div className='cardBlock'>
            <div className='cardText'>
@@ -41,12 +41,13 @@ function App() {
              <b>2000грн</b>
            </div>
            <button className='button'>
-             <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+             <img src='/images/plus1.svg'  alt='plus1' width='11' height='11'/>
            </button>
          </div>
        </div>
        <div className='card'>
-         <img src='/images/sneakers/2.jpg' width='133' height='112'alt=''/>
+         <img src='/images/sneakers/2.jpg' width='133' height='112' alt='sneakers'/>
+
          <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
          <div className='cardBlock'>
            <div className='cardText'>
@@ -54,12 +55,12 @@ function App() {
              <b>2000грн</b>
            </div>
            <button className='button'>
-             <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+             <img src='/images/plus1.svg'  alt='plus1' width='11' height='11'/>
            </button>
          </div>
        </div>
        <div className='card'>
-         <img src='/images/sneakers/3.jpg' width='133' height='112'alt=''/>
+         <img src='/images/sneakers/3.jpg' width='133' height='112' alt=''/>
          <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
          <div className='cardBlock'>
            <div className='cardText'>
@@ -67,12 +68,12 @@ function App() {
              <b>2000грн</b>
            </div>
            <button className='button'>
-             <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+             <img src='/images/plus1.svg'  alt='button' width='11' height='11'/>
            </button>
          </div>
        </div>
        <div className='card'>
-         <img src='/images/sneakers/4.jpg' width='133' height='112'alt=''/>
+         <img src='/images/sneakers/4.jpg' width='133' height='112' alt='sneakers'/>
          <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
          <div className='cardBlock'>
            <div className='cardText'>
@@ -80,7 +81,7 @@ function App() {
              <b>2000грн</b>
            </div>
            <button className='button'>
-             <img src='/images/plus1.svg'  alt='#' width='11' height='11'/>
+             <img src='/images/plus1.svg'  alt='button' width='11' height='11'/>
            </button>
          </div>
        </div>
