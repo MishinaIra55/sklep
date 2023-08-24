@@ -2,7 +2,13 @@
 import './index.scss';
 
 function App() {
-  return<div className='wrapper'>
+  return (
+      <div className='wrapper'>
+  <div className='overlay'>
+    <div className='drawer'>
+
+    </div>
+  </div>
     <header>
       <div className='headerLeft'>
         <img src='/images/logo.svg' alt='#' width='40' height='40'/>
@@ -93,6 +99,7 @@ function App() {
     </div>
 
   </div>
+  )
 }
 
 export default App;
