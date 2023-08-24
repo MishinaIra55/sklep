@@ -23,7 +23,13 @@ function App() {
       </ul>
     </header>
     <div className='content'>
-      <h1 className='contentTitle'>Всі кроссівки</h1>
+     <div>
+       <h1 className='contentTitle'>Всі кроссівки</h1>
+       <div className='search'>
+         <img src='/images/search.svg' alt='search'/>
+         <input placeholder='search'/>
+       </div>
+     </div>
 
      <div className='sneakers'>
        <div className='card'>
