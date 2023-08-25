@@ -7,9 +7,9 @@ import Drawer from "./components/Drawer";
 function App() {
   return (
       <div className='wrapper'>
-  <div  style={{display: 'none'}} className='overlay'>
+
     <Drawer/>
-  </div>
+
     <Header/>
     <div className='content'>
      <div className='contentBlock'>

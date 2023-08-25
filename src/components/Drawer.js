@@ -1,5 +1,6 @@
 function Drawer () {
     return (
+        <div  style={{display: 'none'}} className='overlay'>
         <div className='drawer'>
             <h2 className='mb-30'>Кошик
                 <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
@@ -43,6 +44,7 @@ function Drawer () {
                 </ul>
                 <button className='greenButton'>Замовити замовлення <img src='/images/arrow.svg' alt='arrow'/></button>
             </div>
+        </div>
         </div>
     )
 }
