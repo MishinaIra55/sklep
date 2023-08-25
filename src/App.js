@@ -9,12 +9,13 @@ function App() {
     <h2>Кошик</h2>
 
       <div className='cartItem'>
-        <img src='/images/sneakers/1.jpg'  width={70} height={70} alt='sneakers'/>
+        <div style={{backgroundImage:'url(/images/sneakers/1.jpg)'}} className='cartItemImg'> </div>
+
         <div className='cartInfo'>
           <p className='cartText'>Мужские Кроссовки Nike Air Max 270</p>
           <b>2000 грн</b>
         </div>
-        <img src='/images/btnclose.svg'  alt='btnclose'/>
+        <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
       </div>
 
     </div>
