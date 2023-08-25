@@ -190,6 +190,9 @@ img  {
   z-index: 1;
 }
 .drawer {
+  display: flex;
+  flex-direction: column;
+
   position: absolute;
   width: 420px;
   height: 100%;
@@ -224,7 +227,9 @@ img  {
   }
 
 }
-
+.items {
+  flex: 1;
+}
 .cartItemImg {
   width: 70px;
   height: 70px;
@@ -248,4 +253,22 @@ img  {
   &:hover {
     opacity: 1;
   }
+}
+
+//стили для корзины итого и налог
+.cartTotalInfo {
+  div {
+    flex: 1;
+    border-bottom: 1px dashed #dfdfdf;
+    position: relative;
+    top: -4px;
+    margin: 0 7px;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
 }

@@ -8,24 +8,39 @@ function App() {
     <div className='drawer'>
     <h2 className='mb-30'>Кошик</h2>
 
-      <div className='cartItem'>
-        <div style={{backgroundImage:'url(/images/sneakers/1.jpg)'}} className='cartItemImg'> </div>
+     <div className='items'>
+       <div className='cartItem'>
+         <div style={{backgroundImage:'url(/images/sneakers/1.jpg)'}} className='cartItemImg'> </div>
 
-        <div className='cartInfo'>
-          <p className='cartText'>Мужские Кроссовки Nike Air Max 270</p>
-          <b>2000 грн</b>
-        </div>
-        <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
-      </div>
-      <div className='cartItem'>
-        <div style={{backgroundImage:'url(/images/sneakers/1.jpg)'}} className='cartItemImg'> </div>
+         <div className='cartInfo'>
+           <p className='cartText'>Мужские Кроссовки Nike Air Max 270</p>
+           <b>2000 грн</b>
+         </div>
+         <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
+       </div>
+       <div className='cartItem'>
+         <div style={{backgroundImage:'url(/images/sneakers/1.jpg)'}} className='cartItemImg'> </div>
 
-        <div className='cartInfo'>
-          <p className='cartText'>Мужские Кроссовки Nike Air Max 270</p>
+         <div className='cartInfo'>
+           <p className='cartText'>Мужские Кроссовки Nike Air Max 270</p>
+           <b>2000 грн</b>
+         </div>
+         <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
+       </div>
+     </div>
+
+      <ul className='cartTotalInfo'>
+        <li >
+          <span>Разом:</span>
+          <div></div>
+          <b> 20000 грн </b>
+        </li>
+        <li >
+          <span>Податок 5%:</span>
+          <div></div>
           <b>2000 грн</b>
-        </div>
-        <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
-      </div>
+        </li>
+      </ul>
 
     </div>
   </div>
