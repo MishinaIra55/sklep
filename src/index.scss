@@ -191,7 +191,7 @@ img  {
 }
 .drawer {
   position: absolute;
-  width: 385px;
+  width: 420px;
   height: 100%;
   right: 0;
   background: white;
@@ -205,6 +205,7 @@ img  {
   }
 }
 
+
 .cartItem {
   display: flex;
   align-items: center;
@@ -212,6 +213,7 @@ img  {
   border-radius: 20px;
   overflow: hidden;
   padding: 20px;
+  margin-bottom: 20px;
 
  p {
    font-size: 16px;
