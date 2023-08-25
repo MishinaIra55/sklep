@@ -203,8 +203,12 @@ img  {
   padding: 30px;
 
   h2 {
+    display: flex;
+    justify-content: space-between;
     margin: 0;
-
+  }
+  img {
+    cursor: pointer;
   }
 }
 
