@@ -29,19 +29,21 @@ function App() {
        </div>
      </div>
 
-      <ul className='cartTotalInfo'>
-        <li >
-          <span>Разом:</span>
-          <div></div>
-          <b> 20000 грн </b>
-        </li>
-        <li >
-          <span>Податок 5%:</span>
-          <div></div>
-          <b>2000 грн</b>
-        </li>
-      </ul>
-
+     <div className='cartTotalInfo'>
+       <ul >
+         <li >
+           <span>Разом:</span>
+           <div></div>
+           <b> 20000 грн </b>
+         </li>
+         <li >
+           <span>Податок 5%:</span>
+           <div></div>
+           <b>2000 грн</b>
+         </li>
+       </ul>
+       <button className='greenButton'>Замовити замовлення <img src='/images/arrow.svg' alt='arrow'/></button>
+     </div>
     </div>
   </div>
     <header>
