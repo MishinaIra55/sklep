@@ -1,10 +1,11 @@
 
 import './index.scss';
+import Card from './components/Card';
 
 function App() {
   return (
       <div className='wrapper'>
-  <div className='overlay'>
+  <div  style={{display: 'none'}} className='overlay'>
     <div className='drawer'>
     <h2 className='mb-30'>Кошик
       <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
@@ -79,22 +80,7 @@ function App() {
      </div>
 
      <div className='sneakers'>
-       <div className='card'>
-         <div className='favorite'>
-           <img src='/images/unliked.png'  width='30'  height='30' alt='unliked'/>
-         </div>
-         <img src='/images/sneakers/1.jpg' width={133}  height={112} alt='sneakers'/>
-         <h5>Чоловічі кросівки Nike Blazer Mid Suede</h5>
-         <div className='cardBlock'>
-           <div className='cardText'>
-             <span>Ціна:</span>
-             <b>2000грн</b>
-           </div>
-           <button className='button'>
-             <img src='/images/plus1.svg'  alt='plus1' width='11' height='11'/>
-           </button>
-         </div>
-       </div>
+       <Card />
        <div className='card'>
          <img src='/images/sneakers/2.jpg' width={133} height={112} alt='sneakers'/>
 
