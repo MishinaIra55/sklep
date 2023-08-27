@@ -5,7 +5,10 @@ import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
 const array = [
-    {name:"Чоловічі кросівки Nike Blazer Mid Suede",price:'2000 '}
+    {name:"Чоловічі кросівки Nike Blazer Mid Suede",price:'2000', imageUrl:'/images/sneakers/1.jpg'},
+    {name:"Чоловічі кросівки Nike Air Max 270",price:'3000', imageUrl:'/images/sneakers/2.jpg'},
+    {name:"Чоловічі кросівки  Nike Blazer Mid Suede",price:'5000', imageUrl:'/images/sneakers/3.jpg'},
+    {name:"Чоловічі кросівки Puma X Aka Boku Future Rider ",price:'1500', imageUrl:'/images/sneakers/4.jpg'},
 ]
 function App() {
   return (
@@ -24,7 +27,10 @@ function App() {
 
      <div className='sneakers'>
          {array.map((item)=> (
-             <Card />
+             <Card
+                 title={item.name}
+                 price={item.price}
+                 image={item.imageUrl}/>
              ))
          }
 
