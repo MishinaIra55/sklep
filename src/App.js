@@ -4,13 +4,15 @@ import Card from './components/Card';
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
+const array = [
+    {name:"Чоловічі кросівки Nike Blazer Mid Suede",price:'2000 '}
+]
 function App() {
   return (
       <div className='wrapper'>
 
-    <Drawer/>
-
-    <Header/>
+        <Drawer/>
+        <Header/>
     <div className='content'>
      <div className='contentBlock'>
        <h1 className='contentTitle'>Всі кроссівки</h1>
@@ -21,7 +23,10 @@ function App() {
      </div>
 
      <div className='sneakers'>
-       <Card />
+         {array.map((item)=> (
+             <Card />
+             ))
+         }
 
      </div>
 
