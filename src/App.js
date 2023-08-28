@@ -1,8 +1,9 @@
 
 import './index.scss';
-import Card from './components/Card';
+
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
+import Card from "./components/Card";
 
 const array = [
     {name:"Чоловічі кросівки Nike Blazer Mid Suede",price:'2000', imageUrl:'/images/sneakers/1.jpg'},
