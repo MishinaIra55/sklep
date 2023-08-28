@@ -1,6 +1,12 @@
 import styles from './Card.module.scss';
+import {useState} from "react";
 
-function Index  (props) {
+function Card  (props) {
+    const [isAdded, setIsAdded] = useState(false);
+
+    const onClickPlus = () => {
+        setIsAdded(true);
+    }
     return (
         <div className={styles.card}>
             <div className={styles.favorite}
@@ -14,12 +20,17 @@ function Index  (props) {
                     <span>Ціна:</span>
                     <b>{props.price}</b>
                 </div>
-                <button className={styles.button} onClick={props.onClickPlus}>
-                    <img src='/images/plus1.svg'  alt='plus1' width='11' height='11'/>
+                <button className={styles.plus} onClick={onClickPlus}>
+                    <img
+                        src={isAdded ? '/images/checked.svg' : '/images/plus1.svg'}
+                        alt='plus1'
+                        width='11'
+                        height='11'
+                    />
                 </button>
             </div>
         </div>
     )
 }
 
-export default Index;
+export default Card;
