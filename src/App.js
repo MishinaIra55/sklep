@@ -30,7 +30,9 @@ function App() {
              <Card
                  title={item.name}
                  price={item.price}
-                 image={item.imageUrl}/>
+                 image={item.imageUrl}
+                 click={()=> console.log(item)}
+                 />
              ))
          }
 
