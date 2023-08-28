@@ -32,7 +32,9 @@ function App() {
                  title={item.name}
                  price={item.price}
                  image={item.imageUrl}
-                 click={()=> console.log(item)}
+                 onClickFavorite={()=> console.log('добавили в избранное')}
+
+                 onClickPlus={()=> console.log('нажали плюс')}
                  />
              ))
          }
