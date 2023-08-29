@@ -9,9 +9,9 @@ import {useState} from "react";
 
 function App() {
     const [cartOpened, setCartOpened] = useState(false);
-    const [items, setItems] = useState();
+    const [items, setItems] = useState([]);
 
-
+    fetch('https://64edba671f8721827141a748.mockapi.io/items');
 
   return (
       <div className='wrapper'>
