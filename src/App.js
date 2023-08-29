@@ -6,10 +6,11 @@ import Drawer from "./components/Drawer";
 import Card from "./components/Card";
 import {useState} from "react";
 
-const array = [];
 
 function App() {
     const [cartOpened, setCartOpened] = useState(false);
+    const [items, setItems] = useState();
+
   return (
       <div className='wrapper'>
 
@@ -25,7 +26,7 @@ function App() {
      </div>
 
      <div className='sneakers'>
-         {array.map((item)=> (
+         {items.map((item)=> (
              <Card
                  title={item.name}
                  price={item.price}
