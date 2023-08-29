@@ -17,7 +17,7 @@ function App() {
   return (
       <div className='wrapper'>
 
-        <Drawer/>
+          {cartOpened ? <Drawer/> : null}
         <Header/>
     <div className='content'>
      <div className='contentBlock'>
