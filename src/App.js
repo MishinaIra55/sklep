@@ -4,6 +4,7 @@ import './index.scss';
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 import Card from "./components/Card";
+import {useState} from "react";
 
 const array = [
     {name:"Чоловічі кросівки Nike Blazer Mid Suede",price:'2000', imageUrl:'/images/sneakers/1.jpg'},
@@ -12,6 +13,7 @@ const array = [
     {name:"Чоловічі кросівки Puma X Aka Boku Future Rider ",price:'1500', imageUrl:'/images/sneakers/4.jpg'},
 ]
 function App() {
+    const [cartOpened, setCartOpened] = useState(false);
   return (
       <div className='wrapper'>
 

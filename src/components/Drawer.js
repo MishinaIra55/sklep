@@ -1,6 +1,6 @@
 function Drawer () {
     return (
-        <div  style={{display: 'none'}} className='overlay'>
+        <div className='overlay'>
         <div className='drawer'>
             <h2 className='mb-30'>Кошик
                 <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
