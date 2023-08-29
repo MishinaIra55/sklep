@@ -6,12 +6,8 @@ import Drawer from "./components/Drawer";
 import Card from "./components/Card";
 import {useState} from "react";
 
-const array = [
-    {name:"Чоловічі кросівки Nike Blazer Mid Suede",price:'2000', imageUrl:'/images/sneakers/1.jpg'},
-    {name:"Чоловічі кросівки Nike Air Max 270",price:'3000', imageUrl:'/images/sneakers/2.jpg'},
-    {name:"Чоловічі кросівки  Nike Blazer Mid Suede",price:'5000', imageUrl:'/images/sneakers/3.jpg'},
-    {name:"Чоловічі кросівки Puma X Aka Boku Future Rider ",price:'1500', imageUrl:'/images/sneakers/4.jpg'},
-]
+const array = [];
+
 function App() {
     const [cartOpened, setCartOpened] = useState(false);
   return (
