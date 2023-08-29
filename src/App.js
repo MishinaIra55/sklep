@@ -4,18 +4,20 @@ import './index.scss';
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 import Card from "./components/Card";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 function App() {
     const [cartOpened, setCartOpened] = useState(false);
     const [items, setItems] = useState([]);
 
-    fetch('https://64edba671f8721827141a748.mockapi.io/items').then(response => {
-        return response.json();
-    }).then((json) => {
-        setItems(json);
-    });
+    useEffect(() => {
+        fetch('https://64edba671f8721827141a748.mockapi.io/items').then(response => {
+            return response.json();
+        }).then((json) => {
+            setItems(json);
+        });
+    },[]);
 
   return (
       <div className='wrapper'>
