@@ -14,7 +14,7 @@ function App() {
     fetch('https://64edba671f8721827141a748.mockapi.io/items').then(response => {
         return response.json();
     }).then((json) => {
-        console.log(json)
+        setItems(json);
     });
 
   return (
