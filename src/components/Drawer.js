@@ -1,9 +1,9 @@
-function Drawer () {
+function Drawer (props) {
     return (
         <div className='overlay'>
         <div className='drawer'>
             <h2 className='mb-30'>Кошик
-                <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
+                <img onClick={props.onClose}className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
             </h2>
 
             <div className='items'>

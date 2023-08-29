@@ -17,7 +17,7 @@ function App() {
   return (
       <div className='wrapper'>
 
-          {cartOpened ? <Drawer/> : null}
+          {cartOpened ? <Drawer onClose={()=> setCartOpened(false)}/> : null}
         <Header onClickCart={()=> setCartOpened(true)}/>
     <div className='content'>
      <div className='contentBlock'>
