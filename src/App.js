@@ -11,6 +11,8 @@ function App() {
     const [cartOpened, setCartOpened] = useState(false);
     const [items, setItems] = useState();
 
+
+
   return (
       <div className='wrapper'>
 
