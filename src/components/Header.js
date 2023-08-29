@@ -1,4 +1,4 @@
-function Header () {
+function Header (props) {
     return (
         <header>
             <div className='headerLeft'>

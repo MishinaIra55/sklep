@@ -18,7 +18,7 @@ function App() {
       <div className='wrapper'>
 
           {cartOpened ? <Drawer/> : null}
-        <Header/>
+        <Header onClickCart={()=> setCartOpened(true)}/>
     <div className='content'>
      <div className='contentBlock'>
        <h1 className='contentTitle'>Всі кроссівки</h1>
