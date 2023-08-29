@@ -11,7 +11,11 @@ function App() {
     const [cartOpened, setCartOpened] = useState(false);
     const [items, setItems] = useState([]);
 
-    fetch('https://64edba671f8721827141a748.mockapi.io/items');
+    fetch('https://64edba671f8721827141a748.mockapi.io/items').then(response => {
+        return response.json();
+    }).then((json) => {
+        console.log(json)
+    });
 
   return (
       <div className='wrapper'>
