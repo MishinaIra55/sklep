@@ -10,6 +10,7 @@ import {useEffect, useState} from "react";
 function App() {
     const [cartOpened, setCartOpened] = useState(false);
     const [items, setItems] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
         fetch('https://64edba671f8721827141a748.mockapi.io/items').then(response => {
