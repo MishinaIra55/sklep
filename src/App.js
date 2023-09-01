@@ -20,6 +20,10 @@ function App() {
         });
     },[]);
 
+    const onAddToCart = () => {
+        console.log(122);
+    }
+
   return (
       <div className='wrapper'>
 
@@ -43,7 +47,7 @@ function App() {
                  image={item.imageUrl}
                  onClickFavorite={()=> console.log('о')}
 
-                 onPlus={()=> console.log('нажали плюс')}
+                 onPlus={onAddToCart}
                  />
              ))
          }
