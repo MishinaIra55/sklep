@@ -11,6 +11,7 @@ function App() {
     const [cartOpened, setCartOpened] = useState(false);
     const [items, setItems] = useState([]);
     const [cartItems, setCartItems] = useState([]);//хранение товаров в корзине
+    const [searchValue, setSearchValue] = useState('');//для поиска кросовок
 
     useEffect(() => {
         fetch('https://64edba671f8721827141a748.mockapi.io/items').then(response => {
