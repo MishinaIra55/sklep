@@ -43,7 +43,7 @@ function App() {
                  image={item.imageUrl}
                  onClickFavorite={()=> console.log('о')}
 
-                 onClickPlus={()=> console.log('нажали плюс')}
+                 onPlus={()=> console.log('нажали плюс')}
                  />
              ))
          }

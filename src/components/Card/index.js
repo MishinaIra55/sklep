@@ -1,10 +1,11 @@
 import styles from './Card.module.scss';
 import {useState} from "react";
 
-function Card  ({onClickFavorite,image, title,price }) {
+function Card  ({onClickFavorite, image, title, price, onPlus }) {
     const [isAdded, setIsAdded] = useState(false);
 
     const onClickPlus = () => {
+        onPlus();
         setIsAdded(!isAdded);
     }
     return (
@@ -26,6 +27,7 @@ function Card  ({onClickFavorite,image, title,price }) {
                         alt='plus1'
                         width='11'
                         height='11'
+                        onClick={onClickPlus}
                     />
                 </button>
             </div>
