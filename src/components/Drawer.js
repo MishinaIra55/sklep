@@ -1,4 +1,4 @@
-function Drawer ({onClose,items }) {
+function Drawer ({onClose,items= []}) {
     return (
         <div className='overlay'>
         <div className='drawer'>
