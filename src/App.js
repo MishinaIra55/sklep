@@ -35,8 +35,9 @@ function App() {
      </div>
 
      <div className='sneakers'>
-         {items.map((item)=> (
+         {items.map((item,index)=> (
              <Card
+               key={index}
                  title={item.name}
                  price={item.price}
                  image={item.imageUrl}
