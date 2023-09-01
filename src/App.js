@@ -58,7 +58,7 @@ function App() {
 
      <div className='sneakers'>
          {items
-             .filter((item) => item.name.includes(searchValue))
+             .filter((item) => item.name.toLowerCase().includes(searchValue))
              .map((item,index)=> (
              <Card
                  key={index}
