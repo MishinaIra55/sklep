@@ -57,7 +57,9 @@ function App() {
      </div>
 
      <div className='sneakers'>
-         {items.map((item,index)=> (
+         {items
+             .filter((item) => item.name.includes(searchValue))
+             .map((item,index)=> (
              <Card
                  key={index}
                  title={item.name}
