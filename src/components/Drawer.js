@@ -10,11 +10,11 @@ function Drawer ({onClose,items= []}) {
                 {
                     items.map((object) => (
                     <div className='cartItem'>
-                    <div style={{backgroundImage:'url(/images/sneakers/1.jpg)'}} className='cartItemImg'> </div>
+                    <div style={{backgroundImage:`url(object.imageUrl)`}} className='cartItemImg'> </div>
 
                     <div className='cartInfo'>
-                    <p className='cartText'>Мужские Кроссовки Nike Air Max 270</p>
-                    <b>2000 грн</b>
+                    <p className='cartText'>{object.name}</p>
+                    <b>{object.price} грн</b>
                     </div>
                     <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
                     </div>
