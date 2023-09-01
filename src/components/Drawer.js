@@ -20,7 +20,6 @@ function Drawer ({onClose,items= []}) {
                     </div>
                     ))
                 }
-
             </div>
 
             <div className='cartTotalInfo'>
