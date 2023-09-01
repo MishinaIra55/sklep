@@ -24,6 +24,11 @@ function App() {
     const onAddToCart = (object) => {
         setCartItems(prev => [...prev, object]);
 
+    };
+
+    const onChangeSearchInput = (event) => {
+        setSearchValue(event.target.value);
+
     }
 
   return (
@@ -36,7 +41,7 @@ function App() {
        <h1 className='contentTitle'>Всі кроссівки</h1>
        <div className='search'>
          <img src='/images/search.svg' alt='search'/>
-         <input placeholder='Search...'/>
+         <input value={searchValue} onChange={onChangeSearchInput} placeholder='Search...'/>
        </div>
      </div>
 
