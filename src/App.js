@@ -20,8 +20,9 @@ function App() {
         });
     },[]);
 
-    const onAddToCart = () => {
-        console.log(122);
+    const onAddToCart = (object) => {
+        setCartItems(prev => [...prev, object]);
+        console.log(cartItems)
     }
 
   return (
@@ -47,7 +48,7 @@ function App() {
                  image={item.imageUrl}
                  onClickFavorite={()=> console.log('о')}
 
-                 onPlus={onAddToCart}
+                 onPlus={(object)=> onAddToCart(object)}
                  />
              ))
          }
