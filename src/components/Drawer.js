@@ -1,14 +1,14 @@
-function Drawer (props) {
+function Drawer ({onClose,items }) {
     return (
         <div className='overlay'>
         <div className='drawer'>
             <h2 className='mb-30'>Кошик
-                <img onClick={props.onClose}className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
+                <img onClick={onClose}className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
             </h2>
 
             <div className='items'>
                 {
-                    props.items.map((object) => (
+                    items.map((object) => (
                     <div className='cartItem'>
                     <div style={{backgroundImage:'url(/images/sneakers/1.jpg)'}} className='cartItemImg'> </div>
 
