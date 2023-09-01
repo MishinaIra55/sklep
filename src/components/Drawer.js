@@ -10,10 +10,10 @@ function Drawer ({onClose,items= []}) {
                 {
                     items.map((object) => (
                     <div className='cartItem'>
-                    <div style={{backgroundImage:`url(object.imageUrl)`}} className='cartItemImg'> </div>
+                    <div style={{ backgroundImage:`url(${object.image})`}} className='cartItemImg'> </div>
 
                     <div className='cartInfo'>
-                    <p className='cartText'>{object.name}</p>
+                    <p className='cartText'>{object.title}</p>
                     <b>{object.price} грн</b>
                     </div>
                     <img className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
