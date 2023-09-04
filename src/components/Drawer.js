@@ -1,4 +1,7 @@
 function Drawer ({onRemove, onClose,items= []}) {
+    // Проверяем, пуста ли корзина
+    const isCartEmpty = items.length === 0;
+
     return (
         <div className='overlay'>
         <div className='drawer'>
@@ -31,11 +34,7 @@ function Drawer ({onRemove, onClose,items= []}) {
                     </button>
                 </div>
             }
-
-
-
-
-            <div className='cartTotalInfo'>
+            <div className={`cartTotalInfo ${isCartEmpty ? 'cartTotalInfo-empty' : ''}`}>
                 <ul >
                     <li >
                         <span>Разом:</span>
