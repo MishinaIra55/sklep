@@ -26,19 +26,22 @@ function App() {
             });
     },[]);
 
-
-
+    //метод добавления карточки товара
     const onAddToCart = (object) => {
         axios.post('https://64edba671f8721827141a748.mockapi.io/cart', object);
         setCartItems(prev => [...prev, object]);
+    };
 
+    //метод удаления карточки товара
+    const onRemoveItem = (id) => {
+        axios.post(`https://64edba671f8721827141a748.mockapi.io/cart/${id}`);
+        // setCartItems(prev => [...prev, object]);
     };
 
     const onChangeSearchInput = (event) => {
         setSearchValue(event.target.value);
+    };
 
-
-    }
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -48,7 +51,7 @@ function App() {
   return (
       <div className='wrapper'>
 
-          {cartOpened ? <Drawer items = {cartItems} onClose={()=> setCartOpened(false)}/> : null}
+          {cartOpened ? <Drawer onRemove={onRemoveItem } items = {cartItems} onClose={()=> setCartOpened(false)}/> : null }
         <Header onClickCart={()=> setCartOpened(true)}/>
     <div className='content'>
      <div className='contentBlock'>
