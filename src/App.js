@@ -20,6 +20,10 @@ function App() {
             .then((response) => {
                 setItems(response.data);
             });
+        axios.get('https://64edba671f8721827141a748.mockapi.io/cart')
+            .then((response) => {
+                setCartItems(response.data);
+            });
     },[]);
 
 
