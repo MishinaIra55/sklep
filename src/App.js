@@ -34,7 +34,8 @@ function App() {
 
     //метод удаления карточки товара
     const onRemoveItem = (id) => {
-        axios.post(`https://64edba671f8721827141a748.mockapi.io/cart/${id}`);
+        console.log(id)
+        // axios.post(`https://64edba671f8721827141a748.mockapi.io/cart/${id}`);
         // setCartItems(prev => [...prev, object]);
     };
 
