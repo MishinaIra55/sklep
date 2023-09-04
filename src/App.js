@@ -6,6 +6,8 @@ import Drawer from "./components/Drawer";
 import Card from "./components/Card";
 import {useEffect, useState} from "react";
 
+import axios from 'axios';
+
 
 function App() {
     const [cartOpened, setCartOpened] = useState(false);
@@ -14,12 +16,13 @@ function App() {
     const [searchValue, setSearchValue] = useState('');//для поиска кросовок
 
     useEffect(() => {
-        fetch('https://64edba671f8721827141a748.mockapi.io/items').then(response => {
-            return response.json();
-        }).then((json) => {
-            setItems(json);
-        });
+        axios.get('https://64edba671f8721827141a748.mockapi.io/items')
+            .then((response) => {
+                setItems(response.data);
+            });
     },[]);
+
+
 
     const onAddToCart = (object) => {
         setCartItems(prev => [...prev, object]);
