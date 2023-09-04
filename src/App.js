@@ -25,6 +25,7 @@ function App() {
 
 
     const onAddToCart = (object) => {
+        axios.post('https://64edba671f8721827141a748.mockapi.io/cart', object);
         setCartItems(prev => [...prev, object]);
 
     };
