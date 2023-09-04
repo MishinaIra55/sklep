@@ -1,6 +1,4 @@
 function Drawer ({onRemove, onClose,items= []}) {
-    // Проверяем, пуста ли корзина
-    const isCartEmpty = items.length === 0;
 
     return (
         <div className='overlay'>
@@ -9,21 +7,38 @@ function Drawer ({onRemove, onClose,items= []}) {
                 <img onClick={onClose}className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
             </h2>
             {
-                items.length > 0 ? <div className='items'>
-                    {
-                        items.map((object,index) => (
-                            <div key={index} className='cartItem'>
-                                <div style={{ backgroundImage:`url(${object.image})`}} className='cartItemImg'> </div>
+                items.length > 0 ? (
+                    <div>
+                        <div className='items'>
+                            {items.map((object,index) => (
+                                <div key={index} className='cartItem'>
+                                    <div style={{ backgroundImage:`url(${object.image})`}} className='cartItemImg'> </div>
 
-                                <div className='cartInfo'>
-                                    <p className='cartText'>{object.title}</p>
-                                    <b>{object.price} грн</b>
+                                    <div className='cartInfo'>
+                                        <p className='cartText'>{object.title}</p>
+                                        <b>{object.price} грн</b>
+                                    </div>
+                                    <img onClick={()=> onRemove(object.id)} className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
                                 </div>
-                                <img onClick={()=> onRemove(object.id)} className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
-                            </div>
-                        ))
-                    }
-                </div> :
+                            ))
+                            }</div>
+                        <div className='cartTotalInfo'>
+                            <ul >
+                                <li >
+                                    <span>Разом:</span>
+                                    <div></div>
+                                    <b> 20000 грн </b>
+                                </li>
+                                <li >
+                                    <span>Податок 5%:</span>
+                                    <div></div>
+                                    <b>2000 грн</b>
+                                </li>
+                            </ul>
+                            <button className='greenButton'>Замовити замовлення <img src='/images/arrow.svg' alt='arrow'/></button>
+                        </div>
+                    </div>
+                    ) : (
                     <div className='cartEmpty'>
                     <img className='imageEmpty' width={120} height={120} src='/images/empty-cart.jpg' alt='empty cart'/>
                     <h2 className='mb-20'>Кошик пустий</h2>
@@ -33,22 +48,8 @@ function Drawer ({onRemove, onClose,items= []}) {
                         Повернутися назад
                     </button>
                 </div>
-            }
-            <div className={`cartTotalInfo ${isCartEmpty ? 'cartTotalInfo-empty' : ''}`}>
-                <ul >
-                    <li >
-                        <span>Разом:</span>
-                        <div></div>
-                        <b> 20000 грн </b>
-                    </li>
-                    <li >
-                        <span>Податок 5%:</span>
-                        <div></div>
-                        <b>2000 грн</b>
-                    </li>
-                </ul>
-                <button className='greenButton'>Замовити замовлення <img src='/images/arrow.svg' alt='arrow'/></button>
-            </div>
+                )}
+
         </div>
         </div>
     )
