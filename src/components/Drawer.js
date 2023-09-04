@@ -6,6 +6,16 @@ function Drawer ({onRemove, onClose,items= []}) {
                 <img onClick={onClose}className='btnClose' src='/images/btnclose.svg'  alt='btnclose'/>
             </h2>
 
+            <div className='cartEmpty'>
+                <img className='imageEmpty' width={120} height={120} src='/images/empty-cart.jpg' alt='empty cart'/>
+                <h2 className='mb-20'>Кошик пустий</h2>
+                <p className='opacity-6 mb-20'>Добавте хоть один товар, щоб зробити замовлення</p>
+                <button className='greenEmptyCart' >
+                    <img src='/images/arrow-cart.png' alt='arrow'/>
+                    Повернутися назад
+                </button>
+            </div>
+
             <div className='items'>
                 {
                     items.map((object,index) => (
