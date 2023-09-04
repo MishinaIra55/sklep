@@ -8,8 +8,8 @@ function Drawer ({onClose,items= []}) {
 
             <div className='items'>
                 {
-                    items.map((object) => (
-                    <div className='cartItem'>
+                    items.map((object,index) => (
+                    <div key={index} className='cartItem'>
                     <div style={{ backgroundImage:`url(${object.image})`}} className='cartItemImg'> </div>
 
                     <div className='cartInfo'>
