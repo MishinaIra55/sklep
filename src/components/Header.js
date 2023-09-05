@@ -3,13 +3,18 @@ import {Link} from "react-router-dom";
 function Header (props) {
     return (
         <header>
-            <div className='headerLeft'>
-                <img src='/images/logo.svg' alt='#' width={40} height= {40}/>
-                <div className='headerInfo'>
-                    <h3>REACT SNEAKERS</h3>
-                    <p> Магазин найкращих кросівок</p>
-                </div>
-            </div>
+
+                <Link to="/">
+                    <div className='headerLeft'>
+                    <img src='/images/logo.svg' alt='#' width={40} height= {40}/>
+                    <div className='headerInfo'>
+                        <h3>REACT SNEAKERS</h3>
+                        <p> Магазин найкращих кросівок</p>
+                    </div>
+                    </div>
+                </Link>
+
+
 
             <ul className='headerRight'>
                 <li onClick={props.onClickCart} className='headerList'>
