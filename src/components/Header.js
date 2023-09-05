@@ -17,7 +17,7 @@ function Header (props) {
                     <span> 2000грн</span>
                 </li>
                 <li className='mr-20 cu-p'>
-                    <Link>
+                    <Link to='/favorites'>
                         <img src='/images/favorites.png'  alt='закладки' width='18' height='18'/>
                     </Link>
 
