@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 function Header (props) {
     return (
         <header>
-
-                <Link to="/">
+            <Link to="/">
                     <div className='headerLeft'>
                     <img src='/images/logo.svg' alt='#' width={40} height= {40}/>
                     <div className='headerInfo'>
@@ -12,9 +11,7 @@ function Header (props) {
                         <p> Магазин найкращих кросівок</p>
                     </div>
                     </div>
-                </Link>
-
-
+            </Link>
 
             <ul className='headerRight'>
                 <li onClick={props.onClickCart} className='headerList'>
@@ -23,7 +20,7 @@ function Header (props) {
                 </li>
                 <li className='mr-20 cu-p'>
                     <Link to='/favorites'>
-                        <img src='/images/favorites.png'  alt='закладки' width='18' height='18'/>
+                        <img src='/images/favorites.png'  alt='закладки' width={18} height={18} />
                     </Link>
 
                 </li>
