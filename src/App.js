@@ -83,7 +83,7 @@ function App() {
                  title={item.name}
                  price={item.price}
                  image={item.imageUrl}
-                 onClickFavorite={()=> console.log('о')}
+                 onFavorite={(object)=> onAddFavorites(object)}
 
                  onPlus={(object)=> onAddToCart(object)}
                  />
