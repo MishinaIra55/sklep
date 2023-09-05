@@ -39,6 +39,12 @@ function App() {
          setCartItems((prev) => prev.filter((item) => item.id !== id));
     };
 
+    //метод добавления фоварита товара
+    const onAddFavorites = (object) => {
+        // axios.post('https://64edba671f8721827141a748.mockapi.io/favorites', object);
+        setFavorites(prev => [...prev, object]);
+    };
+
     const onChangeSearchInput = (event) => {
         setSearchValue(event.target.value);
     };
