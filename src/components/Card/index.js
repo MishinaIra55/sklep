@@ -3,6 +3,7 @@ import {useState} from "react";
 
 function Card  ({onClickFavorite, image, title, price, onPlus }) {
     const [isAdded, setIsAdded] = useState(false);
+    const [isFavorite, setIsFavorite] = useState(false);
 
     const onClickPlus = () => {
         onPlus({image, title, price});
