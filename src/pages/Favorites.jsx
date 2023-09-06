@@ -1,7 +1,7 @@
+import Card from "../components/Card";
 
 
-
-function Favorites ()  {
+function Favorites ({items})  {
     return (
         <div className='content'>
             <div className='contentBlock'>
@@ -10,7 +10,17 @@ function Favorites ()  {
             </div>
 
             <div className='sneakers'>
-                Favorites
+                {items
+                    .map((item,index)=> (
+                        <Card
+                            key={index}
+                            title={item.name}
+                            price={item.price}
+                            image={item.imageUrl}
+
+                        />
+                    ))
+                }
 
             </div>
 
