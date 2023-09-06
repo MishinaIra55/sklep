@@ -25,9 +25,13 @@ function App() {
             .then((response) => {
                 setItems(response.data);
             });
-        axios.get('https://64edba671f8721827141a748.mockapi.io/cart')
+        // axios.get('https://64edba671f8721827141a748.mockapi.io/cart')
+        //     .then((response) => {
+        //         setCartItems(response.data);
+        //     });
+        axios.get('https://64edba671f8721827141a748.mockapi.io/favorites')
             .then((response) => {
-                setCartItems(response.data);
+                setFavorites(response.data);
             });
     },[]);
 
@@ -40,7 +44,7 @@ function App() {
     };
     //метод добавления фоварита товара
     const onAddFavorites = (object) => {
-        // axios.post('https://64edba671f8721827141a748.mockapi.io/favorites', object);
+         axios.post('https://64edba671f8721827141a748.mockapi.io/favorites', object);
         setFavorites(prev => [...prev, object]);
     };
 
@@ -76,7 +80,7 @@ function App() {
                                              onAddToCart={onAddToCart}
                                              handleSubmit={handleSubmit}
               />} />
-              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/favorites" element={<Favorites items={favorites}/>} />
 
           </Routes>
   </div>

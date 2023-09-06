@@ -5,7 +5,7 @@ function Favorites ()  {
     return (
         <div className='content'>
             <div className='contentBlock'>
-                <h1 className='contentTitle'>Всі кроссівки</h1>
+                <h1 className='contentTitle'>Улюблені товари</h1>
 
             </div>
 
