@@ -2,7 +2,7 @@ import Card from "../components/Card";
 
 import '../index.scss';
 
-function Favorites ({items})  {
+function Favorites ({items, onAddFavorites})  {
     return (
         <div className='content'>
             <div className='contentBlock'>
@@ -16,7 +16,9 @@ function Favorites ({items})  {
                             title={item.title}
                             price={item.price}
                             image={item.image}
+                            id={item.id}
                             liked={true}
+                            onFavorite={onAddFavorites}
                         />
                     ))
                 }

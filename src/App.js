@@ -42,11 +42,17 @@ function App() {
         axios.delete(`https://64edba671f8721827141a748.mockapi.io/cart/${id}`);
          setCartItems((prev) => prev.filter((item) => item.id !== id));
     };
-    //метод добавления фоварита товара
-    const onAddFavorites = (object) => {
-         axios.post('https://64edba671f8721827141a748.mockapi.io/favorites', object);
-        setFavorites(prev => [...prev, object]);
-    };
+
+    const onAddFavorites = async (object) => {
+    if (favorites.find((objectFav) => objectFav.id === object.id)) {
+        axios.delete(`https://64edba671f8721827141a748.mockapi.io/favorites/${object.id}`);
+    } else {
+        const {data} = await axios.post('https://64edba671f8721827141a748.mockapi.io/favorites', object);
+
+        setFavorites(prev => [...prev, data]);
+    }
+
+}
 
     const onChangeSearchInput = (event) => {
         setSearchValue(event.target.value);
@@ -75,12 +81,13 @@ function App() {
               <Route path="/" element={<Home items={items}
                                              searchValue={searchValue}
                                              setSearchValue={setSearchValue}
-                                            onChangeSearchInput={onChangeSearchInput}
+                                             onChangeSearchInput={onChangeSearchInput}
                                              onAddFavorites={onAddFavorites}
                                              onAddToCart={onAddToCart}
                                              handleSubmit={handleSubmit}
               />} />
-              <Route path="/favorites" element={<Favorites items={favorites}/>} />
+              <Route path="/favorites" element={<Favorites items={favorites}
+                                                           onAddFavorites={onAddFavorites}/>} />
 
           </Routes>
   </div>

@@ -1,7 +1,7 @@
 import Card from "../components/Card";
 
 
-function Home ({items,searchValue,setSearchValue,onChangeSearchInput,onAddFavorites,onAddToCart,handleSubmit})  {
+function Home ({items,searchValue, onChangeSearchInput,onAddFavorites,onAddToCart,handleSubmit})  {
 
 
     return (
@@ -28,6 +28,7 @@ function Home ({items,searchValue,setSearchValue,onChangeSearchInput,onAddFavori
                             title={item.name}
                             price={item.price}
                             image={item.imageUrl}
+                            id={item.id}
                             onFavorite={(object)=> onAddFavorites(object)}
 
                             onPlus={(object)=> onAddToCart(object)}
