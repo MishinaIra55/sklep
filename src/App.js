@@ -7,6 +7,8 @@ import Drawer from "./components/Drawer";
 import {useEffect, useState} from "react";
 
 import axios from 'axios';
+import {Route, Routes} from "react-router-dom";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -50,6 +52,7 @@ function App() {
 
         setSearchValue("");
     };
+
     //метод добавления карточки товара
     const onAddToCart = (object) => {
         axios.post('https://64edba671f8721827141a748.mockapi.io/cart', object);
@@ -63,7 +66,17 @@ function App() {
           {cartOpened ? <Drawer onRemove={onRemoveItem } items = {cartItems} onClose={()=> setCartOpened(false)}/> : null }
         <Header onClickCart={()=> setCartOpened(true)}/>
 
+          <Routes>
+              <Route path="/" element={<Home items={items}
+                                             searchValue={searchValue}
+                                             setSearchValue={setSearchValue}
+                                            onChangeSearchInput={onChangeSearchInput}
+                                             onAddFavorites={onAddFavorites}
+                                             onAddToCart={onAddToCart}
+                                             handleSubmit={handleSubmit}
+              />} />
 
+          </Routes>
   </div>
   )
 }

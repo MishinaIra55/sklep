@@ -2,7 +2,8 @@ import Card from "../components/Card";
 import axios from "axios";
 import { useState} from "react";
 
-function Home ()  {
+function Home ({items,searchValue,setSearchValue,onChangeSearchInput,onAddFavorites,onAddToCart,handleSubmit})  {
+
 
     return (
         <div className='content'>
