@@ -16,6 +16,7 @@ function Favorites ({items})  {
                             title={item.title}
                             price={item.price}
                             image={item.image}
+                            liked={true}
                         />
                     ))
                 }
