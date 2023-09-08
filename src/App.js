@@ -9,7 +9,7 @@ import {useEffect, useState} from "react";
 import axios from 'axios';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
-import Favorites from "./pages/Favorites";
+// import Favorites from "./pages/Favorites";
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     const [items, setItems] = useState([]);
     const [cartItems, setCartItems] = useState([]);//хранение товаров в корзине
     const [searchValue, setSearchValue] = useState('');//для поиска кросовок
-    const [favorites, setFavorites] = useState([]);//массив закладок
+    // const [favorites, setFavorites] = useState([]);//массив закладок
 
 
     useEffect(() => {
@@ -25,38 +25,39 @@ function App() {
             .then((response) => {
                 setItems(response.data);
             });
-        // axios.get('https://64edba671f8721827141a748.mockapi.io/cart')
-        //     .then((response) => {
-        //         setCartItems(response.data);
-        //     });
-        axios.get('https://64edba671f8721827141a748.mockapi.io/favorites')
+        axios.get('https://64edba671f8721827141a748.mockapi.io/cart')
             .then((response) => {
-                setFavorites(response.data);
+                setCartItems(response.data);
             });
+        // axios.get('https://64edba671f8721827141a748.mockapi.io/favorites')
+        //     .then((response) => {
+        //         setFavorites(response.data);
+        //     });
     },[]);
 
 
 
     //метод удаления карточки товара
     const onRemoveItem = (id) => {
+        console.log(id)
         axios.delete(`https://64edba671f8721827141a748.mockapi.io/cart/${id}`);
          setCartItems((prev) => prev.filter((item) => item.id !== id));
     };
 
-    const onAddFavorites = async (object) => {
-    try {
-        if (favorites.find((objectFav) => objectFav.id === object.id)) {
-            axios.delete(`https://64edba671f8721827141a748.mockapi.io/favorites/${object.id}`);
-        } else {
-            const {data} = await axios.post('https://64edba671f8721827141a748.mockapi.io/favorites', object);
-
-            setFavorites(prev => [...prev, data]);
-        }
-    }catch (error) {
-        alert('Не вдалось добавити в фаворити')
-    }
-
-}
+//     const onAddFavorites = async (object) => {
+//     try {
+//         if (favorites.find((objectFav) => objectFav.id === object.id)) {
+//             // axios.delete(`https://64edba671f8721827141a748.mockapi.io/favorites/${object.id}`);
+//         } else {
+//             // const {data} = await axios.post('https://64edba671f8721827141a748.mockapi.io/favorites', object);
+//
+//             // setFavorites(prev => [...prev, data]);
+//         }
+//     } catch (error) {
+//         alert('Не вдалось добавити в фаворити')
+//     }
+//
+// }
 
     const onChangeSearchInput = (event) => {
         setSearchValue(event.target.value);
@@ -70,8 +71,13 @@ function App() {
 
     //метод добавления карточки товара
     const onAddToCart = (object) => {
-        axios.post('https://64edba671f8721827141a748.mockapi.io/cart', object);
-        setCartItems(prev => [...prev, object]);
+        if (cartItems.find((item)=> Number(item.id) === Number(object.id))) {
+            axios.delete(`https://64edba671f8721827141a748.mockapi.io/cart/${object.id}`);
+            setCartItems((prev) => prev.filter((item) =>  Number(item.id) !== Number(object.id)));
+        } else {
+            axios.post('https://64edba671f8721827141a748.mockapi.io/cart', object);
+            setCartItems(prev => [...prev, object]);
+        }
     };
 
 
@@ -86,12 +92,12 @@ function App() {
                                              searchValue={searchValue}
                                              setSearchValue={setSearchValue}
                                              onChangeSearchInput={onChangeSearchInput}
-                                             onAddFavorites={onAddFavorites}
+                                             // onAddFavorites={onAddFavorites}
                                              onAddToCart={onAddToCart}
                                              handleSubmit={handleSubmit}
               />} />
-              <Route path="/favorites" element={<Favorites items={favorites}
-                                                           onAddFavorites={onAddFavorites}/>} />
+              {/*<Route path="/favorites" element={<Favorites items={favorites}*/}
+              {/*                                             onAddFavorites={onAddFavorites}/>} />*/}
 
           </Routes>
   </div>

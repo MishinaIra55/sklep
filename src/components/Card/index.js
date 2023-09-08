@@ -3,23 +3,24 @@ import {useState} from "react";
 
 function Card  ({ id, image, title, price, onPlus, onFavorite, liked}) {
     const [isAdded, setIsAdded] = useState(false);
-    const [isFavorite, setIsFavorite] = useState(liked);
+    // const [isFavorite, setIsFavorite] = useState(liked);
 
     const onClickPlus = () => {
-        onPlus({image, title, price});
+        onPlus({id, image, title, price});
         setIsAdded(!isAdded);
     }
 
-    const onClickFavorite = () => {
-        onFavorite({id, image, title, price});
-        setIsFavorite(!isFavorite);
-    };
+    // const onClickFavorite = () => {
+    //     onFavorite({id, image, title, price});
+    //     setIsFavorite(!isFavorite);
+    // };
 
     return (
         <div className={styles.card}>
             <div className={styles.favorite}
-                 onClick={onClickFavorite}>
-                <img src={isFavorite ? '/images/liked.svg' : '/images/unliked.png'}  width='30'  height='30' alt='unliked'/>
+                  // onClick={onClickFavorite}
+            >
+                {/*<img src={isFavorite ? '/images/liked.svg' : '/images/unliked.png'}  width='30'  height='30' alt='unliked'/>*/}
             </div>
             <img src={image} width={133}  height={112} alt='sneakers'/>
             <h5>{title}</h5>
