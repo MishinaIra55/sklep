@@ -22,14 +22,12 @@ function App() {
 
     useEffect(() => {
         async function fetchData() {
-           const itemsResponce = await axios.get('https://64edba671f8721827141a748.mockapi.io/items');
-
-           const cartResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/cart');
-
+            const cartResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/cart');
+            const itemsResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/items');
             // const favoriteResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/favorites');
 
-            setItems(itemsResponce.data);
             setCartItems(cartResponse.data);
+            setItems(itemsResponse.data);
             //setFavorites(favoriteResponse.data);
          }
         fetchData();
