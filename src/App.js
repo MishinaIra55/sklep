@@ -21,19 +21,19 @@ function App() {
 
 
     useEffect(() => {
-        axios.get('https://64edba671f8721827141a748.mockapi.io/items')
-            .then((response) => {
-                setItems(response.data);
-            });
-        axios.get('https://64edba671f8721827141a748.mockapi.io/cart')
-            .then((response) => {
-                setCartItems(response.data);
-            });
-        // axios.get('https://64edba671f8721827141a748.mockapi.io/favorites')
-        //     .then((response) => {
-        //         setFavorites(response.data);
-        //     });
-    },[]);
+        async function fetchData() {
+           const itemsResponce = await axios.get('https://64edba671f8721827141a748.mockapi.io/items');
+
+           const cartResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/cart');
+
+            // const favoriteResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/favorites');
+
+            setItems(itemsResponce.data);
+            setCartItems(cartResponse.data);
+            //setFavorites(favoriteResponse.data);
+         }
+        fetchData();
+        },[]);
 
 
 
