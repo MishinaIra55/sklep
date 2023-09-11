@@ -18,6 +18,7 @@ function App() {
     const [cartItems, setCartItems] = useState([]);//хранение товаров в корзине
     const [searchValue, setSearchValue] = useState('');//для поиска кросовок
     // const [favorites, setFavorites] = useState([]);//массив закладок
+    const [isLoading, setIsLoading] = useState(false);// для загрузки скелетона
 
 
     useEffect(() => {
