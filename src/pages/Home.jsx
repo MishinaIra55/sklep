@@ -3,6 +3,26 @@ import Card from "../components/Card";
 
 function Home ({items,searchValue, onChangeSearchInput,onAddFavorites,onAddToCart,handleSubmit, cartItems})  {
 
+const renderItems = () => {
+    return (
+        items
+            .filter((item) => item.name.toLowerCase().includes(searchValue))
+            .map((item,index)=> (
+                <Card
+                    key={index}
+                    title={item.name}
+                    price={item.price}
+                    image={item.imageUrl}
+                    id={item.id}
+                    onFavorite={(object)=> onAddFavorites(object)}
+
+                    onPlus={(object)=> onAddToCart(object)}
+                    added={cartItems.some((object) => Number(object.id) === Number(item.id))}
+                    loading={false}
+                />
+            ))
+    )
+};
 
     return (
         <div className='content'>
@@ -20,22 +40,7 @@ function Home ({items,searchValue, onChangeSearchInput,onAddFavorites,onAddToCar
             </div>
 
             <div className='sneakers'>
-                {items
-                    .filter((item) => item.name.toLowerCase().includes(searchValue))
-                    .map((item,index)=> (
-                        <Card
-                            key={index}
-                            title={item.name}
-                            price={item.price}
-                            image={item.imageUrl}
-                            id={item.id}
-                            onFavorite={(object)=> onAddFavorites(object)}
-
-                            onPlus={(object)=> onAddToCart(object)}
-                            added={cartItems.some((object) => Number(object.id) === Number(item.id))}
-                        />
-                    ))
-                }
+                {renderItems()}
 
             </div>
 

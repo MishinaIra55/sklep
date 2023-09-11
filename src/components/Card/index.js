@@ -38,7 +38,7 @@ function Card  ({ id, image, title, price, onPlus, onFavorite, liked, added=fals
                 >
                     {/*<img src={isFavorite ? '/images/liked.svg' : '/images/unliked.png'}  width='30'  height='30' alt='unliked'/>*/}
                 </div>
-                <img src={image} width={133}  height={112} alt='sneakers'/>
+                <img src={image} width="100%"  height={130} alt='sneakers'/>
                 <h5>{title}</h5>
                 <div className={styles.cardBlock}>
                     <div className={styles.cardText}>
