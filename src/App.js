@@ -18,11 +18,12 @@ function App() {
     const [cartItems, setCartItems] = useState([]);//хранение товаров в корзине
     const [searchValue, setSearchValue] = useState('');//для поиска кросовок
     // const [favorites, setFavorites] = useState([]);//массив закладок
-    const [isLoading, setIsLoading] = useState(false);// для загрузки скелетона
+    const [isLoading, setIsLoading] = useState(true);// для загрузки скелетона
 
 
     useEffect(() => {
         async function fetchData() {
+            setIsLoading(true);
             const cartResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/cart');
             const itemsResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/items');
             // const favoriteResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/favorites');
@@ -95,6 +96,7 @@ function App() {
                                              // onAddFavorites={onAddFavorites}
                                              onAddToCart={onAddToCart}
                                              handleSubmit={handleSubmit}
+                                             isLoading={isLoading}
               />} />
               {/*<Route path="/favorites" element={<Favorites items={favorites}*/}
               {/*                                             onAddFavorites={onAddFavorites}/>} />*/}
