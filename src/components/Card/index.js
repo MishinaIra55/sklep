@@ -18,7 +18,8 @@ function Card  ({ id, image, title, price, onPlus, onFavorite, liked, added=fals
 
     return (
         <div className={styles.card}>
-            {loading ? <ContentLoader
+            {loading ? (
+                <ContentLoader
                 speed={2}
                 width={155}
                 height={265}
@@ -32,7 +33,9 @@ function Card  ({ id, image, title, price, onPlus, onFavorite, liked, added=fals
                 <rect x="2" y="186" rx="5" ry="5" width="100" height="15" />
                 <rect x="0" y="220" rx="5" ry="5" width="80" height="24" />
                 <rect x="110" y="217" rx="10" ry="10" width="32" height="32" />
-            </ContentLoader> : <>
+                </ContentLoader>
+            ) : (
+                <>
                 <div className={styles.favorite}
                     // onClick={onClickFavorite}
                 >
@@ -55,7 +58,7 @@ function Card  ({ id, image, title, price, onPlus, onFavorite, liked, added=fals
                         />
                     </button>
                 </div>
-            </>}
+            </>)}
 
 
 
