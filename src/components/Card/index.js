@@ -4,17 +4,17 @@ import ContentLoader from "react-content-loader"
 
 function Card({id, image, title, price, onPlus, onFavorite, liked, added = false, loading = false}) {
     const [isAdded, setIsAdded] = useState(added);
-    // const [isFavorite, setIsFavorite] = useState(liked);
+     const [isFavorite, setIsFavorite] = useState(liked);
 
     const onClickPlus = () => {
         onPlus({id, image, title, price});
         setIsAdded(!isAdded);
     }
 
-    // const onClickFavorite = () => {
-    //     onFavorite({id, image, title, price});
-    //     setIsFavorite(!isFavorite);
-    // };
+    const onClickFavorite = () => {
+        onFavorite({id, image, title, price});
+        setIsFavorite(!isFavorite);
+    };
 
     return (
         <div className={styles.card}>
@@ -37,9 +37,9 @@ function Card({id, image, title, price, onPlus, onFavorite, liked, added = false
             ) : (
                 <>
                     <div className={styles.favorite}
-                        // onClick={onClickFavorite}
+                         onClick={onClickFavorite}
                     >
-                        {/*<img src={isFavorite ? '/images/liked.svg' : '/images/unliked.png'}  width='30'  height='30' alt='unliked'/>*/}
+                        <img src={isFavorite ? '/images/liked.svg' : '/images/unliked.png'}  width='30'  height='30' alt='unliked'/>
                     </div>
                     <img src={image} width="100%" height={130} alt='sneakers'/>
                     <h5>{title}</h5>

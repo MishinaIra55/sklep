@@ -1,32 +1,37 @@
-// import Card from "../components/Card";
-//
-// import '../index.scss';
-//
-// function Favorites ({items, onAddFavorites})  {
-//     return (
-//         <div className='content'>
-//             <div className='contentBlock'>
-//                 <h1 className='contentTitle'>Улюблені товари</h1>
-//             </div>
-//
-//             <div className='sneakers'>
-//                 {items.map((item,index)=> (
-//                         <Card
-//                             key={index}
-//                             title={item.title}
-//                             price={item.price}
-//                             image={item.image}
-//                             id={item.id}
-//                             liked={true}
-//                             onFavorite={onAddFavorites}
-//                         />
-//                     ))
-//                 }
-//
-//             </div>
-//
-//         </div>
-//     )
-// }
-//
-// export default Favorites;
+import Card from "../components/Card";
+
+import '../index.scss';
+import {useContext} from "react";
+import {AppContext} from "../App";
+
+function Favorites ({ onAddFavorites})  {
+    const state = useContext(AppContext);
+
+
+    return (
+        <div className='content'>
+            <div className='contentBlock'>
+                <h1 className='contentTitle'>Улюблені товари</h1>
+            </div>
+
+            <div className='sneakers'>
+                {[].map((item,index)=> (
+                        <Card
+                            key={index}
+                            title={item.title}
+                            price={item.price}
+                            image={item.image}
+                            id={item.id}
+                            liked={true}
+                            onFavorite={onAddFavorites}
+                        />
+                    ))
+                }
+
+            </div>
+
+        </div>
+    )
+}
+
+export default Favorites;
