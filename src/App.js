@@ -4,14 +4,16 @@ import './index.scss';
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 
-import {createContext, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
+import AppContext from "./context";
+
 
 import axios from 'axios';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 
-export const AppContext = createContext({});
+
 
 function App() {
     const [cartOpened, setCartOpened] = useState(false);

@@ -2,7 +2,8 @@ import Card from "../components/Card";
 
 import '../index.scss';
 import {useContext} from "react";
-import {AppContext} from "../App";
+import AppContext from "../context";
+
 
 function Favorites ({ onAddFavorites})  {
     const state = useContext(AppContext);
