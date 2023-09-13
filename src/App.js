@@ -84,27 +84,29 @@ function App() {
 
 
   return (
-      <div className='wrapper'>
+      <AppContext.Provider>
+          <div className='wrapper'>
 
-          {cartOpened ? <Drawer onRemove={onRemoveItem } items = {cartItems} onClose={()=> setCartOpened(false)}/> : null }
-        <Header onClickCart={()=> setCartOpened(true)}/>
+              {cartOpened ? <Drawer onRemove={onRemoveItem } items = {cartItems} onClose={()=> setCartOpened(false)}/> : null }
+              <Header onClickCart={()=> setCartOpened(true)}/>
 
-          <Routes>
-              <Route path="/" element={<Home items={items}
-                                             cartItems={cartItems}
-                                             searchValue={searchValue}
-                                             setSearchValue={setSearchValue}
-                                             onChangeSearchInput={onChangeSearchInput}
-                                             // onAddFavorites={onAddFavorites}
-                                             onAddToCart={onAddToCart}
-                                             handleSubmit={handleSubmit}
-                                             isLoading={isLoading}
-              />} />
-              {/*<Route path="/favorites" element={<Favorites items={favorites}*/}
-              {/*                                             onAddFavorites={onAddFavorites}/>} />*/}
+              <Routes>
+                  <Route path="/" element={<Home items={items}
+                                                 cartItems={cartItems}
+                                                 searchValue={searchValue}
+                                                 setSearchValue={setSearchValue}
+                                                 onChangeSearchInput={onChangeSearchInput}
+                      // onAddFavorites={onAddFavorites}
+                                                 onAddToCart={onAddToCart}
+                                                 handleSubmit={handleSubmit}
+                                                 isLoading={isLoading}
+                  />} />
+                  {/*<Route path="/favorites" element={<Favorites items={favorites}*/}
+                  {/*                                             onAddFavorites={onAddFavorites}/>} />*/}
 
-          </Routes>
-  </div>
+              </Routes>
+          </div>
+      </AppContext.Provider>
   )
 }
 
