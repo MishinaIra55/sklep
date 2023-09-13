@@ -81,10 +81,10 @@ function App() {
             setCartItems(prev => [...prev, object]);
         }
     };
-
+// favorites тоже добавить в контекст
 
   return (
-      <AppContext.Provider>
+      <AppContext.Provider value={{ items, cartItems }}>
           <div className='wrapper'>
 
               {cartOpened ? <Drawer onRemove={onRemoveItem } items = {cartItems} onClose={()=> setCartOpened(false)}/> : null }
