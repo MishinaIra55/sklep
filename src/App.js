@@ -83,10 +83,15 @@ function App() {
             setCartItems(prev => [...prev, object]);
         }
     };
-// favorites тоже добавить в контекст
+
+    const isItemsAdded = (id) => {
+        return cartItems.some((object) => Number(object.id) === Number(id));
+    };
+
+
 
   return (
-      <AppContext.Provider value={{ items, cartItems}}>
+      <AppContext.Provider value={{ items, cartItems, isItemsAdded}}>
           <div className='wrapper'>
 
               {cartOpened ? <Drawer onRemove={onRemoveItem } items = {cartItems} onClose={()=> setCartOpened(false)}/> : null }
