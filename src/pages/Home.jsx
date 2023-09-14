@@ -33,7 +33,7 @@ function Home({
                         price={item.price}
                         image={item.imageUrl}
                         id={item.id}
-                        onFavorite={(object) => onAddFavorites(object)}
+                        // onFavorite={(object) => onAddFavorites(object)}
                         onPlus={(object) => onAddToCart(object)}
                         added={cartItems.some((object) => Number(object.id) === Number(item.id))}
                     />
