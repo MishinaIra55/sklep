@@ -51,9 +51,9 @@ function Drawer ({onRemove, onClose,items= []}) {
                     </div>
                     ) : (
                         <Info
-                            title='Кошик пустий'
-                            description='Добавте хоть один товар, щоб зробити замовлення'
-                            image='/images/empty-cart.jpg'/>
+                            title={isOrderComplete ? "Замовлення оформлене,дякуємо за заказ" : 'Кошик пустий'}
+                            description={isOrderComplete ? "Ваше замовлення буде передане курьеру найближчим часом" : 'Добавте хоть один товар, щоб зробити замовлення'}
+                            image={isOrderComplete ? '/images/cart-added.png' : '/images/empty-cart.jpg'}/>
 
                 )}
 
