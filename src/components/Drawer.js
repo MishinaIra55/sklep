@@ -1,3 +1,5 @@
+import Info from "./Info";
+
 function Drawer ({onRemove, onClose,items= []}) {
 
     return (
@@ -39,6 +41,10 @@ function Drawer ({onRemove, onClose,items= []}) {
                         </div>
                     </div>
                     ) : (
+                        <Info
+                            title='Кошик пустий'
+                            description='Добавте хоть один товар, щоб зробити замовлення'
+                            image='/images/empty-cart.jpg'/>
 
                 )}
 
