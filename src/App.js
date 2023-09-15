@@ -102,7 +102,7 @@ function App() {
 
 
     return (
-      <AppContext.Provider value={{ items, cartItems, isItemsAdded}}>
+      <AppContext.Provider value={{ items, cartItems, isItemsAdded, setCartOpened}}>
           <div className='wrapper'>
 
               {cartOpened ? <Drawer onRemove={onRemoveItem } items = {cartItems} onClose={()=> setCartOpened(false)}/> : null }

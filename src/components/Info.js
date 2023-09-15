@@ -1,4 +1,8 @@
+import {useContext} from "react";
+import AppContext from "../context";
+
 const Info = ({title, description}) => {
+    const { setCartOpened } = useContext(AppContext);
     return (
         <div className='cartEmpty'>
             <img className='imageEmpty' width={120} height={120} src='/images/empty-cart.jpg' alt='empty cart'/>
