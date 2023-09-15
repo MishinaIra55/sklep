@@ -8,7 +8,7 @@ function Drawer ({onRemove, onClose,items= []}) {
             </h2>
             {
                 items.length > 0 ? (
-                    <div>
+                    <div className='d-flex flex-column flex'>
                         <div className='items'>
                             {items.map((object,index) => (
                                 <div key={index} className='cartItem'>
@@ -39,15 +39,7 @@ function Drawer ({onRemove, onClose,items= []}) {
                         </div>
                     </div>
                     ) : (
-                    <div className='cartEmpty'>
-                    <img className='imageEmpty' width={120} height={120} src='/images/empty-cart.jpg' alt='empty cart'/>
-                    <h2 className='mb-20'>Кошик пустий</h2>
-                    <p className='opacity-6 mb-20'>Добавте хоть один товар, щоб зробити замовлення</p>
-                    <button onClick={onClose} className='greenEmptyCart' >
-                        <img src='/images/arrow-cart.png' alt='arrow'/>
-                        Повернутися назад
-                    </button>
-                </div>
+
                 )}
 
         </div>
