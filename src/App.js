@@ -31,6 +31,9 @@ function App() {
             const itemsResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/items');
              // const favoriteResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/favorites');
 
+            console.log("Cart items:", cartResponse.data);
+            console.log("Items:", itemsResponse.data);
+
             setIsLoading(false);
             setCartItems(cartResponse.data);
             setItems(itemsResponse.data);
@@ -43,9 +46,11 @@ function App() {
 
     //метод удаления карточки товара
     const onRemoveItem = (id) => {
-        console.log(id)
+
         axios.delete(`https://64edba671f8721827141a748.mockapi.io/cart/${id}`);
-         setCartItems((prev) => prev.filter((item) => item.id !== id));
+        setCartItems((prev) => prev.filter((item) => item.id !== id));
+
+
     };
 
 //     const onAddFavorites = async (object) => {
@@ -85,12 +90,18 @@ function App() {
     };
 
     const isItemsAdded = (id) => {
-        return cartItems.some((object) => Number(object.id) === Number(id));
+        // console.log("Checking if item is added with id:", id);
+
+        const isAdded = cartItems.some((object) => Number(object.id) === Number(id));
+        // console.log("cartItems:", cartItems);
+        // console.log("Item with id is added:", isAdded);
+
+        return isAdded;
     };
 
 
 
-  return (
+    return (
       <AppContext.Provider value={{ items, cartItems, isItemsAdded}}>
           <div className='wrapper'>
 

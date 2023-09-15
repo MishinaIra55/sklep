@@ -4,13 +4,19 @@ import ContentLoader from "react-content-loader"
 import AppContext from "../../context";
 
 function Card({id, image, title, price, onPlus, onFavorite, liked, added = false, loading = false}) {
-    const {isItemsAdded} = useContext(AppContext);
+
+     const {isItemsAdded} = useContext(AppContext);
      const [isFavorite, setIsFavorite] = useState(liked);
 
-    const onClickPlus = () => {
-        onPlus({id, image, title, price});
+    // console.log("id in Card:", id);
 
-    }
+    const onClickPlus = () => {
+
+                onPlus({id, image, title, price});
+
+    };
+
+
 
     const onClickFavorite = () => {
         onFavorite({id, image, title, price});
@@ -49,7 +55,7 @@ function Card({id, image, title, price, onPlus, onFavorite, liked, added = false
                             <span>Ціна:</span>
                             <b>{price}</b>
                         </div>
-                        <button className={styles.plus} onClick={onClickPlus}>
+                        <button className={styles.plus} >
                             <img
                                 src={isItemsAdded(id) ? '/images/checked.svg' : '/images/plus1.svg'}
                                 alt='plus1'
