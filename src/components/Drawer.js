@@ -1,6 +1,15 @@
 import Info from "./Info";
+import {useContext, useState} from "react";
+import AppContext from "../context";
 
 function Drawer ({onRemove, onClose,items= []}) {
+    const [isOrderComplete, setIsOrderComplete] = useState(false);
+    const { setCartItems } = useContext(AppContext);
+
+    const onClickOrder = () => {
+        setIsOrderComplete(true);
+        setCartItems([]);//очищаю корзину
+    }
 
     return (
         <div className='overlay'>
@@ -37,7 +46,7 @@ function Drawer ({onRemove, onClose,items= []}) {
                                     <b>2000 грн</b>
                                 </li>
                             </ul>
-                            <button className='greenButton'>Замовити замовлення <img src='/images/arrow.svg' alt='arrow'/></button>
+                            <button onClick={onClickOrder} className='greenButton'>Замовити замовлення <img src='/images/arrow.svg' alt='arrow'/></button>
                         </div>
                     </div>
                     ) : (
