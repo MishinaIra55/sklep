@@ -4,7 +4,9 @@ import AppContext from "../context";
 
 function Drawer ({onRemove, onClose,items= []}) {
     const [isOrderComplete, setIsOrderComplete] = useState(false);
-    const { setCartItems } = useContext(AppContext);
+    const { setCartItems, cartItems } = useContext(AppContext);
+
+    const totalPrice = cartItems.reduce((sum, object) => Number(object.price) + sum, 0);
 
     const onClickOrder = () => {
         setIsOrderComplete(true);
@@ -38,12 +40,12 @@ function Drawer ({onRemove, onClose,items= []}) {
                                 <li >
                                     <span>Разом:</span>
                                     <div></div>
-                                    <b> 20000 грн </b>
+                                    <b> {totalPrice} грн </b>
                                 </li>
                                 <li >
                                     <span>Податок 5%:</span>
                                     <div></div>
-                                    <b>2000 грн</b>
+                                    <b>{totalPrice / 100 * 5} грн</b>
                                 </li>
                             </ul>
                             <button onClick={onClickOrder} className='greenButton'>Замовити замовлення <img src='/images/arrow.svg' alt='arrow'/></button>

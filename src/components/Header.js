@@ -5,7 +5,7 @@ import AppContext from "../context";
 function Header (props) {
     const {cartItems} = useContext(AppContext);
     const totalPrice = cartItems.reduce((sum, object) => Number(object.price) + sum, 0);
-    console.log(totalPrice)
+
 
     return (
         <header>
