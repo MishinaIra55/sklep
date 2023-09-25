@@ -4,6 +4,9 @@ import AppContext from "../context";
 
 function Header (props) {
     const {cartItems} = useContext(AppContext);
+    const totalPrice = cartItems.reduce((sum, object) => Number(object.price) + sum, 0);
+    console.log(totalPrice)
+
     return (
         <header>
             <Link to="/">
@@ -19,7 +22,7 @@ function Header (props) {
             <ul className='headerRight'>
                 <li onClick={props.onClickCart} className='headerList'>
                     <img src='/images/cart.svg'  alt='cart' width={18} height={18}/>
-                    <span> 2000грн</span>
+                    <span> {totalPrice}</span>
                 </li>
                 <li className='mr-20 cu-p'>
                     <Link to='/favorites'>
