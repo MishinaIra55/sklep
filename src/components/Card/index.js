@@ -8,7 +8,7 @@ function Card({id, image, title, price, onPlus, onFavorite, liked, added = false
      const {isItemsAdded} = useContext(AppContext);
      const [isFavorite, setIsFavorite] = useState(liked);
 
-    // console.log("id in Card:", id);
+
 
     const onClickPlus = () => {
 
@@ -19,7 +19,7 @@ function Card({id, image, title, price, onPlus, onFavorite, liked, added = false
 
 
     const onClickFavorite = () => {
-        onFavorite({id, image, title, price});
+        onFavorite({id, image, title, price });
         setIsFavorite(!isFavorite);
     };
 
@@ -43,11 +43,13 @@ function Card({id, image, title, price, onPlus, onFavorite, liked, added = false
                 </ContentLoader>
             ) : (
                 <>
+
                     <div className={styles.favorite}
                          onClick={onClickFavorite}
                     >
                         <img src={isFavorite ? '/images/liked.svg' : '/images/unliked.png'}  width='30'  height='30' alt='unliked'/>
                     </div>
+
                     <img src={image} width="100%" height={130} alt='sneakers'/>
                     <h5>{title}</h5>
                     <div className={styles.cardBlock}>

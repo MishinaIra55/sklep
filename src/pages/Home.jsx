@@ -34,6 +34,7 @@ function Home({
                 image={item.imageUrl}
                 id={item.id}
                 onPlus={(object) => onAddToCart(object)}
+                onFavorite={(obj) => onAddFavorites(obj)}
             />
         ));
     };
