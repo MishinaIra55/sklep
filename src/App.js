@@ -11,6 +11,7 @@ import AppContext from "./context";
 import axios from 'axios';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
+import Orders from "./pages/Orders";
 // import Favorites from "./pages/Favorites";
 
 
@@ -120,6 +121,7 @@ function App() {
                   />} />
                   {/*<Route path="/favorites" element={<Favorites*/}
                   {/*                                             onAddFavorites={onAddFavorites}/>} />*/}
+                  <Route path="/orders" element={<Orders />} />
 
               </Routes>
           </div>

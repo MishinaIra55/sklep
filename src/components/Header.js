@@ -28,10 +28,12 @@ function Header (props) {
                     <Link to='/favorites'>
                         <img src='/images/favorites.png'  alt='закладки' width={18} height={18} />
                     </Link>
-
                 </li>
                 <li>
-                    <img src='/images/user.svg'  alt='user' width='18' height='18'/>
+                    <Link to='/orders'>
+                        <img src='/images/user.svg'  alt='user' width={18} height={18} />
+                    </Link>
+
                 </li>
             </ul>
         </header>
