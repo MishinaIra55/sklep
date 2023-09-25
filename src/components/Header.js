@@ -1,6 +1,9 @@
 import {Link} from "react-router-dom";
+import {useContext} from "react";
+import AppContext from "../context";
 
 function Header (props) {
+    const {cartItems} = useContext(AppContext);
     return (
         <header>
             <Link to="/">
