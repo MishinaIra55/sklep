@@ -23,6 +23,7 @@ function App() {
     const [searchValue, setSearchValue] = useState('');//для поиска кросовок
      const [favorites, setFavorites] = useState([]);//массив закладок
     const [isLoading, setIsLoading] = useState(true);// для загрузки скелетона
+    const [orders, setOrders] = useState([]);
 
 
     useEffect(() => {
@@ -31,13 +32,13 @@ function App() {
             const cartResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/cart');
             const itemsResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/items');
             const favoriteResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/favorites');
-
-
+            const ordersResponse = await axios.get('https://64edba671f8721827141a748.mockapi.io/orders');
 
             setIsLoading(false);
             setCartItems(cartResponse.data);
             setItems(itemsResponse.data);
-          setFavorites(favoriteResponse.data);
+            setFavorites(favoriteResponse.data);
+            setOrders(ordersResponse.data);
          }
         fetchData();
         },[]);
@@ -46,11 +47,8 @@ function App() {
 
     //метод удаления карточки товара
     const onRemoveItem = (id) => {
-
         axios.delete(`https://64edba671f8721827141a748.mockapi.io/cart/${id}`);
         setCartItems((prev) => prev.filter((item) => item.id !== id));
-
-
     };
 
     const onAddFavorites = async (object) => {
@@ -61,7 +59,6 @@ function App() {
             const {data} = await axios.post(
                 'https://64edba671f8721827141a748.mockapi.io/favorites',
                 object);
-
             setFavorites(prev => [...prev, data]);
         }
     } catch (error) {
@@ -76,7 +73,6 @@ function App() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
         setSearchValue("");
     };
 
@@ -94,7 +90,6 @@ function App() {
     const isItemsAdded = (id) => {
 
         const isAdded = cartItems.some((object) => Number(object.id) === Number(id));
-
 
         return isAdded;
     };
